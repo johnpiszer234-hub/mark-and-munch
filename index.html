@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#9f1018">
+  <title>Mark &amp; Munch | Order Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-glow"></div>
+
+  <header class="hero">
+    <img class="hero-logo" src="assets/cup seoul.jpg" alt="Mark & Munch">
+    <div class="hero-copy">
+      <p class="eyebrow">GOOD FOOD. GOOD MOOD.</p>
+      <h1>Mark <span>&amp;</span> Munch</h1>
+      <p>Every munch leaves a mark.</p>
+      <a class="primary-link" href="#menu">Order now <span aria-hidden="true">↓</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" id="menu">
+      <p class="eyebrow">FRESHLY MADE FOR YOU</p>
+      <h2>Choose your munch!</h2>
+      <p>Add your favorites to your cart. You can mix items to build your own combo.</p>
+    </section>
+
+    <section class="menu-grid" aria-label="Food and drink menu">
+      <article class="product-card">
+        <div class="product-art enoki-art">
+          <img src="assets/enoki.jpg" alt="Enoki Bites">
+        </div>
+        <div class="product-info">
+          <div class="product-heading">
+            <h3>Enoki Bites</h3><strong>₱35.00</strong>
+          </div>
+          <p>Crispy, savory enoki bites.</p>
+          <button class="add-button" data-add="enoki">Add to order</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-art cup-art">
+          <img src="assets/cup seoul.jpg" alt="Cup Seoul">
+        </div>
+        <div class="product-info">
+          <div class="product-heading">
+            <h3>Cup Seoul</h3><strong>₱55.00</strong>
+          </div>
+          <p>A comforting Korean-inspired cup.</p>
+          <button class="add-button" data-add="cup">Add to order</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-art dino-art">
+          <img src="assets/dino fizz.jpg" alt="Dino Fizz drinks">
+        </div>
+        <div class="product-info">
+          <div class="product-heading">
+            <h3>Dino Fizz</h3><strong>₱49.00</strong>
+          </div>
+          <p>Choose your favorite flavor.</p>
+          <label class="field-label" for="dino-flavor">Flavor</label>
+          <select id="dino-flavor">
+            <option value="Blueberry">Blueberry</option>
+            <option value="Strawberry">Strawberry</option>
+            <option value="Green Apple">Green Apple</option>
+          </select>
+          <button class="add-button" data-add="dino">Add to order</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-art graham-art">
+          <img src="assets/graham nest.jpg" alt="Graham Nest chocolate bites">
+        </div>
+        <div class="product-info">
+          <div class="product-heading">
+            <h3>Graham Nest</h3><strong>₱10.00</strong>
+          </div>
+          <p>Chocolate flavor only.</p>
+          <button class="add-button" data-add="graham">Add to order</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-art tea-art">
+          <img src="assets/iced tea.jpg" alt="Iced Tea Lemonade">
+        </div>
+        <div class="product-info">
+          <div class="product-heading">
+            <h3>Iced Tea Lemonade</h3><strong>₱15.00</strong>
+          </div>
+          <p>Cool and refreshing.</p>
+          <button class="add-button" data-add="tea">Add to order</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="order-layout" id="your-order">
+      <div class="cart-panel panel">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">YOUR PICKS</p>
+            <h2>Your order</h2>
+          </div>
+          <span class="cart-count" id="cart-count">0 items</span>
+        </div>
+
+        <div id="cart-items" class="cart-items">
+          <p class="empty-cart">Your cart is empty. Add something delicious!</p>
+        </div>
+
+        <div class="bill">
+          <div><span>Subtotal</span><strong id="subtotal">₱0.00</strong></div>
+          <div class="discount-row"><span>Discount</span><strong id="discount">−₱0.00</strong></div>
+          <div class="total-row"><span>Total to pay</span><strong id="total">₱0.00</strong></div>
+          <p class="discount-note" id="discount-note">Spend ₱70 or more to unlock a discount.</p>
+        </div>
+      </div>
+
+      <form class="checkout-panel panel" id="order-form">
+        <p class="eyebrow">ALMOST THERE</p>
+        <h2>Customer details</h2>
+        <p class="form-intro">Fill in your details so we know where and when to prepare your order.</p>
+
+        <label for="customer-name">Full name *</label>
+        <input id="customer-name" name="name" type="text" placeholder="Your name" maxlength="80" required>
+
+        <label for="customer-section">Grade &amp; section *</label>
+        <input id="customer-section" name="section" type="text" placeholder="e.g. Grade 11 - STEM A" maxlength="60" required>
+
+        <label for="fulfillment">Pickup or delivery? *</label>
+        <select id="fulfillment" name="fulfillment" required>
+          <option value="Pickup">Pickup</option>
+          <option value="Delivery">Delivery</option>
+        </select>
+
+        <div id="delivery-wrap" class="hidden">
+          <label for="delivery-location">Delivery location / room *</label>
+          <input id="delivery-location" name="deliveryLocation" type="text" placeholder="Where should we deliver?" maxlength="150">
+        </div>
+
+        <label for="pickup-time">Preferred time *</label>
+        <input id="pickup-time" name="preferredTime" type="time" required>
+
+        <label for="notes">Additional notes <span class="optional">(optional)</span></label>
+        <textarea id="notes" name="notes" rows="3" maxlength="300" placeholder="Any special instructions?"></textarea>
+
+        <div class="payment-section">
+          <p class="eyebrow">PAYMENT CONFIRMATION</p>
+          <h3>GCash payment screenshot</h3>
+          <div class="gcash-account">
+  <p class="gcash-label">SEND PAYMENT TO</p>
+  <h2>GCash</h2>
+  <p class="gcash-name">MYRNA N.</p>
+  <div class="gcash-number">
+    <span>09987232624</span>
+    <button type="button"
+      onclick="navigator.clipboard.writeText('09987232624').then(() => alert('GCash number copied!'))">
+      Copy Number
+    </button>
+  </div>
+</div>
+          <p class="form-intro">Upload your GCash payment screenshot. Accepted formats: JPG, PNG, or WEBP. Maximum size: 3 MB.</p>
+
+          <label for="payment-proof">Payment screenshot *</label>
+          <input
+            type="file"
+            id="payment-proof"
+            name="paymentProof"
+            accept="image/jpeg,image/png,image/webp"
+            required
+          >
+
+          <div id="proof-preview-wrap" class="hidden">
+            <p class="preview-label">Screenshot preview</p>
+            <img id="proof-preview" src="" alt="GCash payment screenshot preview">
+            <button type="button" id="remove-proof" class="remove-proof">Remove screenshot</button>
+          </div>
+        </div>
+
+        <button class="submit-button" type="submit" id="submit-order">Place order · ₱0.00</button>
+        <p class="privacy-note">Your order details and payment screenshot will be sent to the Mark &amp; Munch team for confirmation.</p>
+        <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="discount-guide panel">
+  <p class="eyebrow">A LITTLE THANK-YOU</p>
+  <h2>Spend more, save more!</h2>
+
+  <div class="discount-steps">
+    <div>
+      <strong>Below ₱120</strong>
+      <span>No discount</span>
+    </div>
+
+    <div>
+      <strong>₱120 and above</strong>
+      <span>5% OFF</span>
+    </div>
+  </div>
+
+  <p class="fine-print">
+    Get 5% off when your item subtotal reaches ₱120 or more.
+  </p>
+</section>
+  </main>
+
+  <footer>
+    <img src="assets/mark-and-munch-logo.png" alt="" class="footer-logo">
+    <p>Mark &amp; Munch · Every munch leaves a mark.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
